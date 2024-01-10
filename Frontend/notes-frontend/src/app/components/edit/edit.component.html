@@ -1,0 +1,37 @@
+<div class="edit-note-container">
+  <div class="glass-card">
+    <a routerLink="/home" class="back-button">Back</a>
+    <h2>Edit Note</h2>
+    <form (submit)="onSubmit()">
+      <div class="form-group">
+        <label for="content">Note Content</label>
+        <textarea
+          id="content"
+          name="content"
+          class="form-control"
+          [(ngModel)]="formData.content"
+          required
+          rows="5"
+          maxlength="500"
+          pattern="[A-Za-z0-9@;&*+\- ]*"
+          #contentInput="ngModel"
+        ></textarea>
+        <div
+          class="text-danger"
+          *ngIf="contentInput.invalid && contentInput.dirty"
+        >
+          <div *ngIf="contentInput.errors?.['required']">
+            Note content is required.
+          </div>
+          <div *ngIf="contentInput.errors?.['pattern']">
+            Only special characters (!, @, ;, &, *, +, -) and space are allowed.
+          </div>
+          <div *ngIf="contentInput.errors?.['maxlength']">
+            Note content should not exceed 500 characters.
+          </div>
+        </div>
+      </div>
+      <button type="submit" class="btn btn-primary">Save Changes</button>
+    </form>
+  </div>
+</div>

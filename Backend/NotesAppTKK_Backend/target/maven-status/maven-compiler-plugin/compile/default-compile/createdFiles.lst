@@ -1,0 +1,12 @@
+com\nagarro\training\controller\NoteController.class
+com\nagarro\training\Application.class
+com\nagarro\training\model\NoteRequest.class
+com\nagarro\training\model\User.class
+com\nagarro\training\service\NoteService.class
+com\nagarro\training\service\NoteCleanupService.class
+com\nagarro\training\controller\AuthController.class
+com\nagarro\training\service\AuthService.class
+com\nagarro\training\model\Note.class
+com\nagarro\training\config\CorsConfig.class
+com\nagarro\training\repository\AuthRepository.class
+com\nagarro\training\repository\NoteRepository.class
